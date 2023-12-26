@@ -3,6 +3,7 @@ import Burger from './Burger/Burger.js'
 import Controls from "./Controls/Controls.js"
 import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from "reactstrap"
 import Summary from "./summary/Summary.js"
+import { BrowserRouter, Navigate } from "react-router-dom"
 
 const ingredient_prices = {
     salad: 20,
@@ -19,7 +20,8 @@ export default class BurgerBuilder extends Component {
         ],
         totalPrice: 80,
         modalOpen: false,
-        purchasable: false
+        purchasable: false,
+        onClickCheckout: false
 
     }
 
@@ -65,6 +67,13 @@ export default class BurgerBuilder extends Component {
         })
     }
 
+    handleCheckout = () => {
+
+        this.setState({
+            onClickCheckout: true
+        })
+    }
+
     render() {
         return (
             <div>
@@ -89,7 +98,7 @@ export default class BurgerBuilder extends Component {
                         <Summary ingredients={this.state.ingredients} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="success" onClick={this.toggleModal}>
+                        <Button color="success" onClick={this.handleCheckout}>
                             Continue to checkout
                         </Button>
                         <Button color="secondary" onClick={this.toggleModal}>
@@ -97,6 +106,7 @@ export default class BurgerBuilder extends Component {
                         </Button>
                     </ModalFooter>
                 </Modal>
+                {this.state.onClickCheckout && <Navigate to="/checkout" replace={"true"} />}
             </div>
 
         )
