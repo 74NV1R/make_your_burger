@@ -5,7 +5,7 @@ import './Burger.css'
 const Burger = props => {
     let IngredientArr = props.ingredients.map(item => {
         let amountArr = [...Array(item.amount).keys()]
-        console.log(amountArr)
+        //console.log(amountArr)
         return amountArr.map(_ => {
             return <Ingredient type={item.type} key={Math.random()} />
         })
