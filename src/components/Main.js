@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom"
 import Orders from "./Orders/Orders"
 import Checkout from './Orders/Checkout/Checkout'
 import Auth from "./Auth/Auth"
+import Checkout2 from "./Orders/Checkout/Checkout2"
 
 const Main = props => {
     return (
@@ -16,6 +17,8 @@ const Main = props => {
                     <Route path='/orders' element={<Orders />} />
                     <Route path='/Login' element={<Auth />} />
                     <Route path='/checkout' element={<Checkout />} />
+                    <Route path='/checkout2' element={<Checkout2 />} />
+
 
                 </Routes>
 

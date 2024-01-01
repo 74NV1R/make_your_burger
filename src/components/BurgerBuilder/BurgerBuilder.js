@@ -85,7 +85,7 @@ class BurgerBuilder extends Component {
                         </Button>
                     </ModalFooter>
                 </Modal>
-                {this.state.onClickCheckout && <Navigate to="/checkout" replace={"true"} />}
+                {this.state.onClickCheckout && <Navigate to="/checkout2" replace={"true"} />}
             </div>
 
         )
