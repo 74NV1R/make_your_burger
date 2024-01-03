@@ -23,7 +23,7 @@ const Order = props => {
             <p>
                 Order number: {props.order.id}
                 <br />
-                Delivery address: {props.order.customer.deliveryAddress}
+                Delivery address: {props.order.customer.address}
 
             </p>
             <hr />
